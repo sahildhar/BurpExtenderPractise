@@ -38,7 +38,7 @@ class BurpExtender(IBurpExtender,IContextMenuFactory):
                 service = http_traffic[0].getHttpService()
                 hostname = service.getHost()
                 ip = socket.gethostbyname(hostname)
-                req = urllib2.Request("https://api.shodan.io/shodan/host/"+ip+"?key=1lgyO39gi4FOQqI7Y2TYndvNUJNRGjYe")
+                req = urllib2.Request("https://api.shodan.io/shodan/host/"+ip+"?key=<api_key>")
                 response = json.loads(urllib2.urlopen(req).read())
                 print "This report is last updated on  %s" % str(response['last_update'])
                 print "IP - %s" %str(response['ip_str'])
